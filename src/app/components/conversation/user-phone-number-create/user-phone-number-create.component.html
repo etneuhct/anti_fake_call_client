@@ -1,0 +1,29 @@
+<app-dialog-container1>
+  <ng-container dialogTitle>{{ "Phone Number" | translate }}</ng-container>
+  <ng-container dialogContent>
+    <div class="pt-3 pb-3">
+      <ng-container *ngIf="createForm as form">
+        <form [formGroup]="form" (submit)="submitForm()">
+          <button hidden></button>
+          <app-form-container1>
+            <ng-container formContent>
+              <mat-form-field appearance="outline" class="w-full">
+                <mat-label>{{ "Your phone number" | translate }}</mat-label>
+                <input matInput type="text" formControlName="phone_number">
+                <mat-hint>{{ "1112223333" | translate }}</mat-hint>
+                <mat-error>{{ form.controls['phone_number'].errors | formError | translate }}</mat-error>
+              </mat-form-field>
+            </ng-container>
+
+          </app-form-container1>
+        </form>
+      </ng-container>
+    </div>
+
+  </ng-container>
+  <ng-container dialogActions>
+    <button mat-button mat-dialog-close>{{ "Cancel"  | translate }}</button>
+    <button mat-button (click)="submitForm()">{{ "Confirm" | translate }}
+    </button>
+  </ng-container>
+</app-dialog-container1>

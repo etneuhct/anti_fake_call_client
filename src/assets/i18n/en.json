@@ -1,0 +1,8 @@
+{
+  "phoneNumberVerificationFailPatchNotification": "wrong code",
+  "phoneNumberVerificationCreateSuccessNotification": "Code sent to your phone number",
+  "userPhoneNumberGetSuccessNotification": "Information update",
+  "patternFieldInvalid": "Invalid pattern",
+  "userVirtualPhoneNumberCreateFailNotification": "Could not associate your number",
+  "userVirtualPhoneNumberSuccessPatchNotification": "Virtual phone number updates"
+}

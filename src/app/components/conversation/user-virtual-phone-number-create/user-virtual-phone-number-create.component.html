@@ -1,0 +1,43 @@
+<app-dialog-container1>
+  <ng-container dialogTitle>{{ "Virtual Phone Number" | translate }}</ng-container>
+  <ng-container dialogContent>
+    <div class="pt-3 pb-3">
+      <ng-container *ngIf="initialObject ? updateForm : createForm as form">
+        <form [formGroup]="form" (submit)="submitForm()">
+          <button hidden></button>
+          <app-form-container1>
+            <ng-container formContent>
+              <mat-form-field class="w-full">
+                <mat-label>{{ "Your phone number" | translate }}</mat-label>
+                <mtx-select [items]="userPhoneNumbers" bindLabel="phone_number" bindValue="id"
+                            [multiple]="false"
+                            formControlName="user_phone_number"
+                            appendTo="html">
+                </mtx-select>
+                <mat-error>{{ form.controls['user_phone_number'].errors | formError | translate }}</mat-error>
+              </mat-form-field>
+              <mat-form-field class="w-full" *ngIf="!initialObject">
+                <mat-label>{{ "Virtual phone number" | translate }}</mat-label>
+                <mtx-select [items]="virtualPhoneNumbers" bindLabel="phone_number" bindValue="id"
+                            [multiple]="false"
+                            formControlName="virtual_phone_number"
+                            appendTo="html">
+                </mtx-select>
+                <mat-error>{{ form.controls['virtual_phone_number'].errors | formError | translate }}</mat-error>
+              </mat-form-field>
+
+
+            </ng-container>
+
+          </app-form-container1>
+        </form>
+      </ng-container>
+    </div>
+
+  </ng-container>
+  <ng-container dialogActions>
+    <button mat-button mat-dialog-close>{{ "Cancel"  | translate }}</button>
+    <button mat-button (click)="submitForm()">{{ "Confirm" | translate }}
+    </button>
+  </ng-container>
+</app-dialog-container1>

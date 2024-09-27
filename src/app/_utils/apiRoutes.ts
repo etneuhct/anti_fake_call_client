@@ -1,0 +1,1 @@
+export const apiRoutes = {conversationHistory: "conversation-history", contact: "contact", userPhoneNumber: "user-phone-number", virtualPhoneNumber: "virtual-phone-number", phoneNumberVerification: "phone-number-verification", userVirtualPhoneNumber: "user-virtual-phone-number", }

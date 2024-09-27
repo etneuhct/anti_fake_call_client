@@ -1,0 +1,27 @@
+<section class="hero">
+  <div class="content">
+    <h1>
+      <span *ngFor="let appNameletter of appNameLetters; let i = index"
+            class="animate-fade-down animate-once animate-duration-[2000ms] animate-ease-linear"
+            [style.animation-delay]="(1000 + appNameletter.duration * 1000) + 'ms'">{{ appNameletter.letter }}</span>
+    </h1>
+    <p>{{ "Block the noise, answer with confidence." | translate }}</p>
+    <div class="buttons">
+      <div class="animate-fade-right animate-once animate-duration-[5000ms]">
+        <button
+          [routerLink]="isAuthenticated ? '/app' : '/login'"
+          mat-raised-button color="primary">{{ "Access the application" | translate }}
+        </button>
+      </div>
+      <div class="animate-fade-left animate-once animate-duration-[5000ms]">
+        <button
+          [routerLink]="RoutingPart.joinUs"
+          mat-raised-button color="accent">{{ "Join us" | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+

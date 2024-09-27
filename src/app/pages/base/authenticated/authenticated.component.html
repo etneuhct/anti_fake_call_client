@@ -1,0 +1,29 @@
+<mat-sidenav-container class="left-sidenav-container" style="height: 100vh;">
+  <mat-sidenav opened mode="over" #leftBar>
+    <app-auth-options-nav-bar></app-auth-options-nav-bar>
+  </mat-sidenav>
+
+  <div style="height: 100%;">
+    <mat-toolbar class="toolbar-fixed">
+      <button mat-icon-button (click)="leftBar.opened = !leftBar.opened">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>{{ !leftBar.opened ? appName : "" }}</span>
+      <span class="spacer"></span>
+      <button mat-icon-button [routerLink]="['/', RoutingPart.app, RoutingPart.profile]">
+        <mat-icon>person</mat-icon>
+      </button>
+      <button mat-icon-button [routerLink]="['/', RoutingPart.logout]">
+        <mat-icon>logout</mat-icon>
+      </button>
+
+    </mat-toolbar>
+    <mat-drawer-container style="min-height: calc(100% - 64px);">
+      <mat-drawer-content>
+        <div class="p-10" style="height: 100%; max-width: 1000px">
+          <router-outlet></router-outlet>
+        </div>
+      </mat-drawer-content>
+    </mat-drawer-container>
+  </div>
+</mat-sidenav-container>

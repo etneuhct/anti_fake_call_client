@@ -1,0 +1,60 @@
+<app-box-container3>
+  <ng-container boxLabel>{{ "Sign in to your account" | translate }}</ng-container>
+  <ng-container boxContent>
+
+    <form class="space-y-4 md:space-y-6" [formGroup]="loginForm" (submit)="login()">
+      <button hidden></button>
+      <app-form-container1>
+        <ng-container formContent>
+          <mat-form-field appearance="outline" style="width: 100%">
+            <mat-label>{{ "Your email" | translate }}</mat-label>
+            <input matInput formControlName="email" type="email" name="email" id="email"
+                   placeholder="name@company.com" required="">
+            <mat-error>{{ loginForm.controls['email'].errors | formError | translate }}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" style="width: 100%">
+            <mat-label>{{ "Password" | translate }}</mat-label>
+            <input
+              matInput formControlName="password" type="password" name="password" id="password"
+              placeholder="••••••••">
+            <mat-error>{{ loginForm.controls['password'].errors | formError | translate }}</mat-error>
+          </mat-form-field>
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-start">
+              <div class="flex items-center h-5">
+                <input id="remember" aria-describedby="remember" type="checkbox"
+                       class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
+                >
+              </div>
+              <div class="ml-3 text-sm">
+                <label for="remember" class="text-gray-500">{{ "Se rappeler de moi" | translate }}</label>
+              </div>
+            </div>
+            <a routerLink="/reset-password"
+               class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">{{ "Mot de passe oublié ?" | translate }}</a>
+          </div>
+        </ng-container>
+      </app-form-container1>
+
+      <div class="py-2" *ngIf="formLevelErrors.length > 0">
+        <ng-container *ngFor="let error of formLevelErrors">
+          <mat-error>{{ error | translate }}</mat-error>
+        </ng-container>
+      </div>
+
+    </form>
+
+  </ng-container>
+  <ng-container boxAction>
+    <button mat-raised-button
+            (click)="login()"
+            color="primary" style="width: 100%">{{ "Se connecter" | translate }}</button>
+  </ng-container>
+  <ng-container boxLinks>
+    <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+      {{ "Vous n'avez pas encore de compte ? " | translate }}<a routerLink="/registration"
+                                                                class="font-medium text-primary-600 hover:underline dark:text-primary-500">
+      {{ "Créez-vous en un" | translate }}</a>
+    </p>
+  </ng-container>
+</app-box-container3>
