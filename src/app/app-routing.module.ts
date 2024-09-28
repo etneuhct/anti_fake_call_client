@@ -11,7 +11,6 @@ import {MaintenanceComponent} from "./pages/errors/maintenance/maintenance.compo
 import {LogoutComponent} from "./pages/auth/logout/logout.component";
 import {AuthenticatedComponent} from "./pages/base/authenticated/authenticated.component";
 import {NgModule} from "@angular/core";
-import {DashboardComponent} from "./pages/app/dashboard/dashboard.component";
 import {ProfileComponent} from "./pages/auth/profile/profile.component";
 import {RoutingPart} from "./_utils/const";
 import {EditUserProfileComponent} from "./components/auth/edit-user-profile/edit-user-profile.component";
@@ -32,6 +31,7 @@ import {
 import {
   UserVirtualPhoneNumberListComponent
 } from "./components/conversation/user-virtual-phone-number-list/user-virtual-phone-number-list.component";
+import {AuthGuard} from "@kwyxyz/ngx-auth";
 
 const routes: Routes = [
   {
@@ -51,7 +51,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'app', component: AuthenticatedComponent, children: [
+    path: 'app', component: AuthenticatedComponent, canActivate: [AuthGuard], children: [
       {path: "", pathMatch: 'full', redirectTo: RoutingPart.userPhoneNumber},
 
       {

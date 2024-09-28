@@ -4,5 +4,6 @@
   "userPhoneNumberGetSuccessNotification": "Information update",
   "patternFieldInvalid": "Invalid pattern",
   "userVirtualPhoneNumberCreateFailNotification": "Could not associate your number",
-  "userVirtualPhoneNumberSuccessPatchNotification": "Virtual phone number updates"
+  "userVirtualPhoneNumberSuccessPatchNotification": "Virtual phone number updates",
+  "requiredFieldInvalid": "This field is required"
 }
