@@ -5,5 +5,6 @@
   "patternFieldInvalid": "Invalid pattern",
   "userVirtualPhoneNumberCreateFailNotification": "Could not associate your number",
   "userVirtualPhoneNumberSuccessPatchNotification": "Virtual phone number updates",
-  "requiredFieldInvalid": "This field is required"
+  "requiredFieldInvalid": "This field is required",
+  "userPhoneNumberCreateFailNotification": "Cannot add this number. Already in the list ?"
 }

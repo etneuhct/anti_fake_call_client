@@ -7,5 +7,7 @@ export const environment = {
   appName: 'Anti Fake Call',
   logo: 'assets/logo.webp',
   contactEmail: "info@example.com",
-
+  demoPhoneNumber: "+13437006109",
+  demoPassword: "demo",
+  demoUsername: "demo@demo.demo"
 };

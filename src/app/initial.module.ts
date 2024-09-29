@@ -52,7 +52,7 @@ import {RoutingPart} from "./_utils/const";
       authApiUrl: environment.authApiUrl,
       allowedOauthProvider: [],
       loginPageUri: RoutingPart.login,
-      afterLoginPageUri: '/',
+      afterLoginPageUri: '/app',
       afterLogoutPageUri: `/${RoutingPart.login}`,
       afterRegistrationPageUri: `/${RoutingPart.login}`,
       afterPasswordResetPageUri: `/${RoutingPart.login}`

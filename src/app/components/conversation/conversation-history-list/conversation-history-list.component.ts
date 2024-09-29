@@ -6,7 +6,11 @@ import {ConversationHistoryService} from "@project-services/conversation-history
 import {MtxGrid, MtxGridColumn} from "@ng-matero/extensions/grid";
 import {BoxContainer4Component} from "../../../templates/box-container4/box-container4.component";
 import {MatButton} from "@angular/material/button";
-import {ConversationHistoryCallingStatusText, emptyTableText} from "../../../_utils/const";
+import {
+  ConversationHistoryAnalysisStatusText,
+  ConversationHistoryCallingStatusText,
+  emptyTableText
+} from "../../../_utils/const";
 import {MatDialog} from "@angular/material/dialog";
 import {ConversationHistoryDetailComponent} from "../conversation-history-detail/conversation-history-detail.component";
 
@@ -51,7 +55,7 @@ export class ConversationHistoryListComponent extends CRUDComponent<Conversation
     {
       header: "Analysis status",
       field: "analysis_status",
-      formatter: (data: ConversationHistory) => ConversationHistoryCallingStatusText[data.analysis_status]
+      formatter: (data: ConversationHistory) => ConversationHistoryAnalysisStatusText[data.analysis_status]
 
     },
     {

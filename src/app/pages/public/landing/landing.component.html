@@ -6,6 +6,9 @@
             [style.animation-delay]="(1000 + appNameletter.duration * 1000) + 'ms'">{{ appNameletter.letter }}</span>
     </h1>
     <p>{{ "Block the noise, answer with confidence." | translate }}</p>
+    <p>For a demo, you can log in using the following credentials: Username: {{ demoUsername }},
+      Password: {{ demoPassword }}, or call directly at {{ demoPhoneNumber }}.</p>
+
     <div class="buttons">
       <div class="animate-fade-right animate-once animate-duration-[5000ms]">
         <button

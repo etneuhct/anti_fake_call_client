@@ -40,5 +40,8 @@ export class LandingComponent implements OnInit {
     )
   }
 
-    protected readonly RoutingPart = RoutingPart;
+  protected readonly RoutingPart = RoutingPart;
+  demoUsername = environment.demoUsername;
+  demoPassword = environment.demoPassword;
+  demoPhoneNumber = environment.demoPhoneNumber
 }
